@@ -289,10 +289,29 @@ class DFlashAttention(nn.Module):
     def _attend(self, q, k, v, attention_mask, bsz, q_len):
         """Attend with the rotated Q/K and V, then project. Returns ``[B, q_len, hidden]``.
 
-        Shared by every draft attention class, so the sink path and the HF dispatch exist
-        once; a subclass only changes how Q/K/V are formed.
+        Shared by every draft attention class, so each attention path exists once; a subclass
+        only changes how Q/K/V are formed. ``attention_mask`` is either the dense additive
+        [B, 1, Q, KV] tensor (HF attention dispatch, or the eager sink path) or a
+        FlexAttention BlockMask carrying the same predicate block-sparsely.
         """
-        if self.attention_sink_bias is not None:
+        from .dflash_flex_attention import flex_attention_forward, is_block_mask
+
+        if is_block_mask(attention_mask):
+            if self.attention_sink_bias is not None:
+                # The sink is an extra softmax column the flex kernel does not have; running
+                # without it would train a sink-less draft that is exported as sink-enabled.
+                raise NotImplementedError(
+                    "dflash_use_flex_attention does not support dflash_attention_sink; "
+                    "unset one of them."
+                )
+            dropout = 0.0 if not self.training else self.attention_dropout
+            if dropout:
+                raise ValueError(
+                    "FlexAttention path does not support attention_dropout > 0 "
+                    f"(got {dropout}); unset dflash_use_flex_attention."
+                )
+            attn_output = flex_attention_forward(q, k, v, attention_mask, self.scaling)
+        elif self.attention_sink_bias is not None:
             if self.sliding_window is not None:
                 # The eager sink path applies only the caller-supplied mask; a per-layer
                 # window from config.layer_types would be silently dropped. DFlash windows

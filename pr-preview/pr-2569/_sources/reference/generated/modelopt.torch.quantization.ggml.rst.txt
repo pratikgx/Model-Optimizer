@@ -48,6 +48,10 @@ ggml
       iq1_s_fake_quant
       iq1_s_grid
       quantize_iq1_s
+      dequantize_iq2_s
+      iq2_s_fake_quant
+      iq2_s_grid
+      quantize_iq2_s
       dequantize_iq2_xs
       iq2_xs_fake_quant
       iq2_xs_grid

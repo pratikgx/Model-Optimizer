@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="green" data-content_root="../../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>config - Model Optimizer 0.0.1.dev1+gcab8f7641</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="dflash" href="modelopt.torch.speculative.dflash.html" /><link rel="prev" title="speculative" href="modelopt.torch.speculative.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>config - Model Optimizer 0.0.1.dev1+gf026ab864</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="dflash" href="modelopt.torch.speculative.dflash.html" /><link rel="prev" title="speculative" href="modelopt.torch.speculative.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e1a1ceaf" />
@@ -405,12 +405,16 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_lilicorr_w_ce"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_lilicorr_w_ce</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_lilicorr_w_margin"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_lilicorr_w_margin</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_lilicorr_w_pen"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_lilicorr_w_pen</span></code></a></li>
+<li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_lk_ce_decay"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_lk_ce_decay</span></code></a></li>
+<li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_lk_ce_scale"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_lk_ce_scale</span></code></a></li>
+<li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_lk_loss_type"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_lk_loss_type</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_loss_decay_factor"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_loss_decay_factor</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_loss_objective"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_loss_objective</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_mask_token_id"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_mask_token_id</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_num_anchors"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_num_anchors</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_offline"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_offline</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_report_acc"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_report_acc</span></code></a></li>
+<li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_selector_loss_alpha"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_selector_loss_alpha</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_self_logit_distillation"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_self_logit_distillation</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_swa_window_size"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_swa_window_size</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_use_torch_compile"><code class="docutils literal notranslate"><span class="pre">DFlashConfig.dflash_use_torch_compile</span></code></a></li>
@@ -606,6 +610,21 @@ data-aria-dark="Switch to auto color mode">
 <dd></dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="modelopt.torch.speculative.config.DFlashConfig.dflash_lk_ce_decay">
+<span class="sig-name descname"><span class="pre">dflash_lk_ce_decay</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_lk_ce_decay" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelopt.torch.speculative.config.DFlashConfig.dflash_lk_ce_scale">
+<span class="sig-name descname"><span class="pre">dflash_lk_ce_scale</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_lk_ce_scale" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelopt.torch.speculative.config.DFlashConfig.dflash_lk_loss_type">
+<span class="sig-name descname"><span class="pre">dflash_lk_loss_type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'ce'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'tv'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'lambda'</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_lk_loss_type" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="modelopt.torch.speculative.config.DFlashConfig.dflash_loss_decay_factor">
 <span class="sig-name descname"><span class="pre">dflash_loss_decay_factor</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_loss_decay_factor" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
@@ -633,6 +652,11 @@ data-aria-dark="Switch to auto color mode">
 <dl class="py attribute">
 <dt class="sig sig-object py" id="modelopt.torch.speculative.config.DFlashConfig.dflash_report_acc">
 <span class="sig-name descname"><span class="pre">dflash_report_acc</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><a class="headerlink" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_report_acc" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modelopt.torch.speculative.config.DFlashConfig.dflash_selector_loss_alpha">
+<span class="sig-name descname"><span class="pre">dflash_selector_loss_alpha</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#modelopt.torch.speculative.config.DFlashConfig.dflash_selector_loss_alpha" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">

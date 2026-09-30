@@ -90,7 +90,8 @@ Changelog
 
 **Bug Fixes**
 
-- Fix Hugging Face exports of checkpoints with off-index safetensors (such as GLM-4.7's ``mtp.safetensors``) missing those files: ``export_hf_checkpoint`` now writes them itself.
+- Fix Hugging Face exports of checkpoints with off-index safetensors (such as GLM-4.7's ``mtp.safetensors``) missing those files: ``export_hf_checkpoint`` now writes them itself, and ``examples/hf_ptq`` no longer drops them when given a Hub model ID.
+- Fix ``examples/hf_ptq`` exports setting ``pad_token`` to the EOS token in the tokenizer files; the source checkpoint's tokenizer files are now exported unchanged.
 - Fix Megatron-Core checkpoint saving for quantized grouped MoE experts when tensor and expert parallelism are both enabled.
 - Fix shared ONNX export metadata and Diffusers attention policy: every ``NVFP4QuantExporter`` post-process now upgrades the default-domain opset to at least 23, all FP8 custom-op exports re-run ONNX shape/type inference after setting output metadata, and quantized SDPA derives FP8 MHA enablement from the live Q/K/V quantizers instead of honoring a caller-set ``_disable_fp8_mha`` attribute.
 - Fix ONNX FP16 conversion failing to preserve public output types when type inference changes a graph output declaration before output casts are inserted.

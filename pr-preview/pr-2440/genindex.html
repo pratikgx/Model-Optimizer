@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="green" data-content_root="./">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Index - Model Optimizer 0.0.1.dev1+geff312fc3</title><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Index - Model Optimizer 0.0.1.dev1+g79bb76e32</title><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e1a1ceaf" />
@@ -1831,6 +1831,8 @@ data-aria-dark="Switch to auto color mode">
       </ul></li>
       <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.dequantize_iq1_s">dequantize_iq1_s() (in module modelopt.torch.quantization.ggml)</a>
 </li>
+      <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.dequantize_iq2_s">dequantize_iq2_s() (in module modelopt.torch.quantization.ggml)</a>
+</li>
       <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.dequantize_iq2_xs">dequantize_iq2_xs() (in module modelopt.torch.quantization.ggml)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.dequantize_iq2_xxs">dequantize_iq2_xxs() (in module modelopt.torch.quantization.ggml)</a>
@@ -1859,10 +1861,10 @@ data-aria-dark="Switch to auto color mode">
 </li>
       <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_draft_attention">dflash_draft_attention (DFlashConfig attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_export_rope_scaling">dflash_export_rope_scaling (DFlashConfig attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_fp32_master_weights">dflash_fp32_master_weights (DFlashConfig attribute)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_freeze_base_model">dflash_freeze_base_model (DFlashConfig attribute)</a>
@@ -1883,6 +1885,12 @@ data-aria-dark="Switch to auto color mode">
 </li>
       <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_lilicorr_w_pen">dflash_lilicorr_w_pen (DFlashConfig attribute)</a>
 </li>
+      <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_lk_ce_decay">dflash_lk_ce_decay (DFlashConfig attribute)</a>
+</li>
+      <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_lk_ce_scale">dflash_lk_ce_scale (DFlashConfig attribute)</a>
+</li>
+      <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_lk_loss_type">dflash_lk_loss_type (DFlashConfig attribute)</a>
+</li>
       <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_loss_decay_factor">dflash_loss_decay_factor (DFlashConfig attribute)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_loss_objective">dflash_loss_objective (DFlashConfig attribute)</a>
@@ -1894,6 +1902,8 @@ data-aria-dark="Switch to auto color mode">
       <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_offline">dflash_offline (DFlashConfig attribute)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_report_acc">dflash_report_acc (DFlashConfig attribute)</a>
+</li>
+      <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_selector_loss_alpha">dflash_selector_loss_alpha (DFlashConfig attribute)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.speculative.config.html#modelopt.torch.speculative.config.DFlashConfig.dflash_self_logit_distillation">dflash_self_logit_distillation (DFlashConfig attribute)</a>
 </li>
@@ -3627,6 +3637,10 @@ data-aria-dark="Switch to auto color mode">
 </li>
       <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.iq1_s_grid">iq1_s_grid() (in module modelopt.torch.quantization.ggml)</a>
 </li>
+      <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.iq2_s_fake_quant">iq2_s_fake_quant() (in module modelopt.torch.quantization.ggml)</a>
+</li>
+      <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.iq2_s_grid">iq2_s_grid() (in module modelopt.torch.quantization.ggml)</a>
+</li>
       <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.iq2_xs_fake_quant">iq2_xs_fake_quant() (in module modelopt.torch.quantization.ggml)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.iq2_xs_grid">iq2_xs_grid() (in module modelopt.torch.quantization.ggml)</a>
@@ -3673,10 +3687,10 @@ data-aria-dark="Switch to auto color mode">
         <li><a href="reference/generated/modelopt.torch.trace.symbols.html#modelopt.torch.trace.symbols.Symbol.is_constant">(Symbol property)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/modelopt.onnx.op_types.html#modelopt.onnx.op_types.is_control_flow_op">is_control_flow_op() (in module modelopt.onnx.op_types)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference/generated/modelopt.onnx.op_types.html#modelopt.onnx.op_types.is_control_flow_op">is_control_flow_op() (in module modelopt.onnx.op_types)</a>
+</li>
       <li><a href="reference/generated/modelopt.torch.export.trtllm.layer_utils.html#modelopt.torch.export.trtllm.layer_utils.is_conv">is_conv() (in module modelopt.torch.export.trtllm.layer_utils)</a>
 </li>
       <li><a href="reference/generated/modelopt.onnx.op_types.html#modelopt.onnx.op_types.is_conversion_op">is_conversion_op() (in module modelopt.onnx.op_types)</a>
@@ -4147,10 +4161,10 @@ data-aria-dark="Switch to auto color mode">
 </li>
       <li><a href="reference/generated/modelopt.torch.utils.list.html#modelopt.torch.utils.list.list_closest_to_median">list_closest_to_median() (in module modelopt.torch.utils.list)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/modelopt.torch.quantization.nn.modules.quant_linear.html#modelopt.torch.quantization.nn.modules.quant_linear.RealQuantLinear.list_of_scale_tensors">list_of_scale_tensors (RealQuantLinear attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/modelopt.torch.utils.nemotron_vlm_dataset_utils.html#modelopt.torch.utils.nemotron_vlm_dataset_utils.list_repo_files_cached">list_repo_files_cached() (in module modelopt.torch.utils.nemotron_vlm_dataset_utils)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.puzzletron.block_config.html#modelopt.torch.puzzletron.block_config.AttentionConfig.llama4">llama4 (AttentionConfig attribute)</a>
@@ -4272,6 +4286,8 @@ data-aria-dark="Switch to auto color mode">
       <li><a href="reference/generated/modelopt.torch.export.trtllm.model_config.html#modelopt.torch.export.trtllm.model_config.EmbeddingConfig.local_vocab_size">local_vocab_size (EmbeddingConfig property)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.quantization.config.html#modelopt.torch.quantization.config.LocalHessianCalibConfig">LocalHessianCalibConfig (class in modelopt.torch.quantization.config)</a>
+</li>
+      <li><a href="reference/generated/modelopt.torch.utils.mlflow.html#modelopt.torch.utils.mlflow.log_active_run_experiment_json">log_active_run_experiment_json() (in module modelopt.torch.utils.mlflow)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.utils.mlflow.html#modelopt.torch.utils.mlflow.MlflowRunLogger.log_experiment_json">log_experiment_json() (MlflowRunLogger method)</a>
 </li>
@@ -9237,6 +9253,8 @@ data-aria-dark="Switch to auto color mode">
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.quantize_iq1_s">quantize_iq1_s() (in module modelopt.torch.quantization.ggml)</a>
 </li>
+      <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.quantize_iq2_s">quantize_iq2_s() (in module modelopt.torch.quantization.ggml)</a>
+</li>
       <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.quantize_iq2_xs">quantize_iq2_xs() (in module modelopt.torch.quantization.ggml)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.quantization.ggml.html#modelopt.torch.quantization.ggml.quantize_iq2_xxs">quantize_iq2_xxs() (in module modelopt.torch.quantization.ggml)</a>
@@ -10135,10 +10153,10 @@ data-aria-dark="Switch to auto color mode">
 </li>
       <li><a href="reference/generated/modelopt.torch.utils.random.html#modelopt.torch.utils.random.shuffle">shuffle() (in module modelopt.torch.utils.random)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/modelopt.torch.utils.logging.html#modelopt.torch.utils.logging.silence_matched_warnings">silence_matched_warnings() (in module modelopt.torch.utils.logging)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/modelopt.torch.puzzletron.utils.parsing.html#modelopt.torch.puzzletron.utils.parsing.simple_parse_args_string">simple_parse_args_string() (in module modelopt.torch.puzzletron.utils.parsing)</a>
 </li>
       <li><a href="reference/generated/modelopt.onnx.autocast.referencerunner.html#modelopt.onnx.autocast.referencerunner.TensorStats.size">size (TensorStats property)</a>
@@ -10226,6 +10244,8 @@ data-aria-dark="Switch to auto color mode">
       <li><a href="reference/generated/modelopt.torch.export.trtllm.model_config_utils.html#modelopt.torch.export.trtllm.model_config_utils.split_config_and_weights">split_config_and_weights() (in module modelopt.torch.export.trtllm.model_config_utils)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.puzzletron.replacement_library.replacement_utils.html#modelopt.torch.puzzletron.replacement_library.replacement_utils.split_replacements_to_teacher_and_student">split_replacements_to_teacher_and_student() (in module modelopt.torch.puzzletron.replacement_library.replacement_utils)</a>
+</li>
+      <li><a href="reference/generated/modelopt.torch.utils.mlflow.html#modelopt.torch.utils.mlflow.split_tracking_credentials">split_tracking_credentials() (in module modelopt.torch.utils.mlflow)</a>
 </li>
       <li><a href="reference/generated/modelopt.torch.export.quant_aware_conversion.html#modelopt.torch.export.quant_aware_conversion.SplitRule">SplitRule (class in modelopt.torch.export.quant_aware_conversion)</a>
 </li>

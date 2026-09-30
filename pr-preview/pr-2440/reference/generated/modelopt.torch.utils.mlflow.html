@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="green" data-content_root="../../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>mlflow - Model Optimizer 0.0.1.dev1+geff312fc3</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nemotron_vlm_dataset_utils" href="modelopt.torch.utils.nemotron_vlm_dataset_utils.html" /><link rel="prev" title="memory_monitor" href="modelopt.torch.utils.memory_monitor.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>mlflow - Model Optimizer 0.0.1.dev1+g79bb76e32</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="nemotron_vlm_dataset_utils" href="modelopt.torch.utils.nemotron_vlm_dataset_utils.html" /><link rel="prev" title="memory_monitor" href="modelopt.torch.utils.memory_monitor.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e1a1ceaf" />
@@ -420,12 +420,14 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.default_run_name"><code class="docutils literal notranslate"><span class="pre">default_run_name()</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.describe_run"><code class="docutils literal notranslate"><span class="pre">describe_run()</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.drop_experiment_json"><code class="docutils literal notranslate"><span class="pre">drop_experiment_json()</span></code></a></li>
+<li><a class="reference internal" href="#modelopt.torch.utils.mlflow.log_active_run_experiment_json"><code class="docutils literal notranslate"><span class="pre">log_active_run_experiment_json()</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.mask_tracking_uri"><code class="docutils literal notranslate"><span class="pre">mask_tracking_uri()</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.masked_args"><code class="docutils literal notranslate"><span class="pre">masked_args()</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.resolve_mlflow_args"><code class="docutils literal notranslate"><span class="pre">resolve_mlflow_args()</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.resolve_tracking_uri"><code class="docutils literal notranslate"><span class="pre">resolve_tracking_uri()</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.resolved_recipe_texts"><code class="docutils literal notranslate"><span class="pre">resolved_recipe_texts()</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.run_tags"><code class="docutils literal notranslate"><span class="pre">run_tags()</span></code></a></li>
+<li><a class="reference internal" href="#modelopt.torch.utils.mlflow.split_tracking_credentials"><code class="docutils literal notranslate"><span class="pre">split_tracking_credentials()</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.tracked_run"><code class="docutils literal notranslate"><span class="pre">tracked_run()</span></code></a></li>
 <li><a class="reference internal" href="#modelopt.torch.utils.mlflow.validate_tracking_uri"><code class="docutils literal notranslate"><span class="pre">validate_tracking_uri()</span></code></a></li>
 </ul>
@@ -514,23 +516,29 @@ only once tracking is actually enabled.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.drop_experiment_json" title="modelopt.torch.utils.mlflow.drop_experiment_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_experiment_json</span></code></a></p></td>
 <td><p>Remove a provenance pointer an untracked export would otherwise inherit.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.mask_tracking_uri" title="modelopt.torch.utils.mlflow.mask_tracking_uri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mask_tracking_uri</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.log_active_run_experiment_json" title="modelopt.torch.utils.mlflow.log_active_run_experiment_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_active_run_experiment_json</span></code></a></p></td>
+<td><p>Record MLflow's <em>currently active</em> run as the producer of a checkpoint.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.mask_tracking_uri" title="modelopt.torch.utils.mlflow.mask_tracking_uri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mask_tracking_uri</span></code></a></p></td>
 <td><p>Mask any <code class="docutils literal notranslate"><span class="pre">user:token&#64;</span></code> a tracking URI carries, for printing.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.masked_args" title="modelopt.torch.utils.mlflow.masked_args"><code class="xref py py-obj docutils literal notranslate"><span class="pre">masked_args</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.masked_args" title="modelopt.torch.utils.mlflow.masked_args"><code class="xref py py-obj docutils literal notranslate"><span class="pre">masked_args</span></code></a></p></td>
 <td><p>A copy of <em>args</em> whose tracking URI cannot leak credentials into a printed namespace.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.resolve_mlflow_args" title="modelopt.torch.utils.mlflow.resolve_mlflow_args"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_mlflow_args</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.resolve_mlflow_args" title="modelopt.torch.utils.mlflow.resolve_mlflow_args"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_mlflow_args</span></code></a></p></td>
 <td><p>Settle where tracking is configured from, and name the experiment, in place.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.resolve_tracking_uri" title="modelopt.torch.utils.mlflow.resolve_tracking_uri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_tracking_uri</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.resolve_tracking_uri" title="modelopt.torch.utils.mlflow.resolve_tracking_uri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_tracking_uri</span></code></a></p></td>
 <td><p>Settle the tracking URI from <code class="docutils literal notranslate"><span class="pre">--mlflow</span></code> and the environment.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.resolved_recipe_texts" title="modelopt.torch.utils.mlflow.resolved_recipe_texts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolved_recipe_texts</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.resolved_recipe_texts" title="modelopt.torch.utils.mlflow.resolved_recipe_texts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolved_recipe_texts</span></code></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">{artifact</span> <span class="pre">path:</span> <span class="pre">content}</span></code> for <em>recipe</em>, or <code class="docutils literal notranslate"><span class="pre">{}</span></code> when the run used none.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.run_tags" title="modelopt.torch.utils.mlflow.run_tags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_tags</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.run_tags" title="modelopt.torch.utils.mlflow.run_tags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_tags</span></code></a></p></td>
 <td><p>This run's join keys, shared with whatever is later done with what it produced.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.split_tracking_credentials" title="modelopt.torch.utils.mlflow.split_tracking_credentials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_tracking_credentials</span></code></a></p></td>
+<td><p>Move any <code class="docutils literal notranslate"><span class="pre">user:token&#64;</span></code> out of <em>uri</em> into MLflow's own credential variables.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#modelopt.torch.utils.mlflow.tracked_run" title="modelopt.torch.utils.mlflow.tracked_run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracked_run</span></code></a></p></td>
 <td><p>Track one invocation of <em>tool</em> for the duration of the block.</p></td>
@@ -980,6 +988,25 @@ pointer included.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="modelopt.torch.utils.mlflow.log_active_run_experiment_json">
+<span class="sig-name descname"><span class="pre">log_active_run_experiment_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checkpoint_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modelopt.torch.utils.mlflow.log_active_run_experiment_json" title="Link to this definition">#</a></dt>
+<dd><p>Record MLflow’s <em>currently active</em> run as the producer of a checkpoint.</p>
+<p>For a caller whose run is owned by something else – Megatron-Bridge opens it for a
+training job, on its last rank. Call it from the rank that owns the run, once the
+checkpoint is on disk. With no run to name, any pointer already there is <em>removed</em>: the
+weights are new, so a previous run’s pointer would misname their author. Returns whether
+a run was found, so a caller that asked for tracking can tell that from an untracked job.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>checkpoint_dir</strong> (<em>Path</em><em> | </em><em>str</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="modelopt.torch.utils.mlflow.mask_tracking_uri">
 <span class="sig-name descname"><span class="pre">mask_tracking_uri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modelopt.torch.utils.mlflow.mask_tracking_uri" title="Link to this definition">#</a></dt>
 <dd><p>Mask any <code class="docutils literal notranslate"><span class="pre">user:token&#64;</span></code> a tracking URI carries, for printing.</p>
@@ -1095,6 +1122,25 @@ source that names no directory, such as a Hub <code class="docutils literal notr
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>dict</em>[<em>str</em>, <em>str</em>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modelopt.torch.utils.mlflow.split_tracking_credentials">
+<span class="sig-name descname"><span class="pre">split_tracking_credentials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modelopt.torch.utils.mlflow.split_tracking_credentials" title="Link to this definition">#</a></dt>
+<dd><p>Move any <code class="docutils literal notranslate"><span class="pre">user:token&#64;</span></code> out of <em>uri</em> into MLflow’s own credential variables.</p>
+<p>For a caller that hands the URI to something which <em>records</em> it – Megatron-Bridge logs
+its resolved config as params and writes it into the checkpoint. Masking is not an option
+there, since the value is also what authenticates. Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> when the credential
+cannot be moved, so the caller can decline to record it. Variables the caller already
+exported win.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>uri</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>str</em> | <em>None</em></p>
 </dd>
 </dl>
 </dd></dl>

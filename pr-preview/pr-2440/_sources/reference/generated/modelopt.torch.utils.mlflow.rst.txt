@@ -52,12 +52,14 @@ mlflow
       default_run_name
       describe_run
       drop_experiment_json
+      log_active_run_experiment_json
       mask_tracking_uri
       masked_args
       resolve_mlflow_args
       resolve_tracking_uri
       resolved_recipe_texts
       run_tags
+      split_tracking_credentials
       tracked_run
       validate_tracking_uri
    
